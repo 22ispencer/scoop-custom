@@ -1,6 +1,8 @@
 {
-    "version":  "v2024.11.29",
-    "license":  "MIT",
-    "url":  "https://github.com/jdx/mise/releases/download/v2024.11.29/mise-v2024.11.29-windows-x64.zip",
-    "bin":  "mise/bin/mise.exe"
+    "version": "v2024.11.29",
+    "license": "MIT",
+    "url": "https://github.com/jdx/mise/releases/download/v2024.11.29/mise-v2024.11.29-windows-x64.zip",
+    "post_install": "$currentPath = [Environment]::GetEnvironmentVariable('Path', 'User'); $newPath = $env:LOCALAPPDATA + '\\mise\\shims;' + $currentPath; [Environment]::SetEnvironmentVariable('Path', $newPath, 'User');",
+    "bin": "mise/bin/mise.exe",
+    "pre_uninstall": "$currentPath = [Environment]::GetEnvironmentVariable('Path', 'User'); $newPath = $currentPath.Replace($env:LOCALAPPDATA + '\\mise\\shims;', ''); [Environment]::SetEnvironmentVariable('Path', $newPath, 'User');"
 }
