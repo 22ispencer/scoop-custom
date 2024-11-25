@@ -1,0 +1,6 @@
+{
+    "version":  "v2024.11.29",
+    "license":  "MIT",
+    "url":  "https://github.com/jdx/mise/releases/download/v2024.11.29/mise-v2024.11.29-windows-x64.zip",
+    "bin":  "mise/bin/mise.exe"
+}
